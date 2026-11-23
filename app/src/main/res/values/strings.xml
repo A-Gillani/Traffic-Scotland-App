@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Scottish Road Traffic</string>
+    <string name="traffic_title">Road conditions</string>
+    <string name="traffic_source">Contains Traffic Scotland data</string>
+    <string name="all_traffic">All traffic</string>
+    <string name="incidents">Incidents</string>
+    <string name="roadworks">Roadworks</string>
+    <string name="map">Map</string>
+    <string name="road_filter">Filter by road (e.g. M8)</string>
+    <string name="refresh">Refresh traffic feeds</string>
+    <string name="back_to_list">Back to traffic list</string>
+    <string name="map_scope">Traffic category</string>
+    <string name="map_radius">Distance from Glasgow</string>
+    <string name="no_records">No reports in this category.</string>
+    <string name="no_road">No reports for %1$s. Clear the road filter to see more.</string>
+    <string name="loading">Updating traffic feeds…</string>
+    <string name="update_time">Updated %1$s</string>
+    <string name="feed_failed">%1$s unavailable. Check your connection and tap refresh.</string>
+    <string name="feed_stale">Showing earlier %1$s data. Tap refresh to retry.</string>
+    <string name="map_road">Road filter · %1$s</string>
+    <string name="long_works">Long roadworks · over 24 hours</string>
+    <string name="short_works">Short roadworks · up to 24 hours</string>
+    <plurals name="report_count">
+        <item quantity="one">%d report</item>
+        <item quantity="other">%d reports</item>
+    </plurals>
+</resources>

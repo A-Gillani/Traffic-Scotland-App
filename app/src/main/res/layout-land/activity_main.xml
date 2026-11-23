@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/traffic_surface" android:focusableInTouchMode="true">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:id="@+id/mainContent" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ScrollView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="2">
+                <include layout="@layout/traffic_controls" />
+            </ScrollView>
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/traffic_line" />
+            <include layout="@layout/traffic_results" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="3" />
+        </LinearLayout>
+        <FrameLayout android:id="@+id/detailsContainer" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:visibility="gone" />
+        <FrameLayout android:id="@+id/mapContainer" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:visibility="gone" />
+    </FrameLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/traffic_surface" app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_navigation_menu" />
+</LinearLayout>

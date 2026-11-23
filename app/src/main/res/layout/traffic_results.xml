@@ -1,0 +1,9 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView android:id="@+id/resultsStatus" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp" android:paddingVertical="10dp" android:textColor="@color/traffic_secondary"
+        android:textSize="14sp" android:accessibilityLiveRegion="polite" />
+    <ListView android:id="@+id/trafficListView" android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:divider="@color/traffic_line" android:dividerHeight="1dp"
+        android:paddingHorizontal="16dp" android:clipToPadding="false" />
+</LinearLayout>

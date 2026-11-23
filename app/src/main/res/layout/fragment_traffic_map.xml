@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/traffic_surface">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:paddingHorizontal="8dp">
+        <Spinner android:id="@+id/mapFilterSpinner" android:layout_width="0dp" android:layout_height="48dp"
+            android:layout_weight="1" android:contentDescription="@string/map_scope" />
+        <Spinner android:id="@+id/distanceSpinner" android:layout_width="0dp" android:layout_height="48dp"
+            android:layout_weight="1" android:contentDescription="@string/map_radius" />
+    </LinearLayout>
+    <TextView android:id="@+id/mapRoad" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp" android:paddingBottom="6dp" android:textColor="@color/traffic_secondary" android:visibility="gone" />
+    <FrameLayout android:id="@+id/googleMapContainer" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <color name="traffic_surface">#FAFCFB</color>
+    <color name="traffic_ink">#152C32</color>
+    <color name="traffic_secondary">#50676B</color>
+    <color name="traffic_accent">#00675F</color>
+    <color name="traffic_accent_text">#FFFFFF</color>
+    <color name="traffic_line">#D0DEDA</color>
+    <color name="traffic_brief">#216745</color>
+    <color name="traffic_extended">#994116</color>
+</resources>

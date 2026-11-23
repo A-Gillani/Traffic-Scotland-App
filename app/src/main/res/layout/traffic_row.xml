@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:paddingVertical="14dp" android:paddingHorizontal="4dp">
+    <ImageView android:id="@+id/situationIcon" android:layout_width="24dp" android:layout_height="24dp"
+        android:layout_marginEnd="12dp" android:layout_marginTop="2dp" android:importantForAccessibility="no" />
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+        <TextView android:id="@+id/rowRoad" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/traffic_ink" android:textSize="20sp" android:textStyle="bold" />
+        <TextView android:id="@+id/rowType" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/traffic_accent" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+        <TextView android:id="@+id/rowComment" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:textColor="@color/traffic_ink" android:textSize="16sp"
+            android:maxLines="3" android:ellipsize="end" />
+        <TextView android:id="@+id/rowDuration" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+    </LinearLayout>
+</LinearLayout>

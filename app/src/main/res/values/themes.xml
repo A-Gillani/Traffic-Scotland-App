@@ -1,0 +1,13 @@
+<resources>
+    <style name="Base.Theme.Gillani_Muhammad_S2364257" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/traffic_accent</item>
+        <item name="colorOnPrimary">@color/traffic_accent_text</item>
+        <item name="colorSurface">@color/traffic_surface</item>
+        <item name="colorOnSurface">@color/traffic_ink</item>
+        <item name="colorOnSurfaceVariant">@color/traffic_secondary</item>
+        <item name="colorSecondaryContainer">@color/traffic_line</item>
+        <item name="colorOnSecondaryContainer">@color/traffic_accent</item>
+        <item name="android:windowBackground">@color/traffic_surface</item>
+    </style>
+    <style name="Theme.Gillani_Muhammad_S2364257" parent="Base.Theme.Gillani_Muhammad_S2364257" />
+</resources>

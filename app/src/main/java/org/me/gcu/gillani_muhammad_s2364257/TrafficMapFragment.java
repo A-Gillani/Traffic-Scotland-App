@@ -225,12 +225,26 @@ public class TrafficMapFragment extends Fragment
         }
 
         googleMap.clear();
+        android.util.Log.d("TrafficMap",
+                "Category=" + selectedCategory
+                        + " Radius=" + radiusKm[selectedDistance]);
 
         String scope = selectedCategory == 1 ? TrafficViewModel.INCIDENT :
                 selectedCategory == 2 ? TrafficViewModel.ROADWORKS : "";
         List<TrafficSituation> situations = viewModel.results(scope);
 
         for (TrafficSituation situation : situations) {
+
+            if (selectedCategory == 1 &&
+                    !TrafficViewModel.INCIDENT.equalsIgnoreCase(situation.category)) {
+                continue;
+            }
+
+            if (selectedCategory == 2 &&
+                    !TrafficViewModel.ROADWORKS.equalsIgnoreCase(situation.category)) {
+                continue;
+            }
+
 
             boolean incident =
                     "Incident".equalsIgnoreCase(
@@ -280,6 +294,10 @@ public class TrafficMapFragment extends Fragment
             float colour = incident
                     ? BitmapDescriptorFactory.HUE_RED
                     : BitmapDescriptorFactory.HUE_ORANGE;
+
+            android.util.Log.d("TrafficMap",
+                    "Category=" + selectedCategory
+                            + " Radius=" + radiusKm[selectedDistance]);
 
             googleMap.addMarker(
                     new MarkerOptions()

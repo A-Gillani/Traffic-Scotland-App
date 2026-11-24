@@ -7,7 +7,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -95,14 +94,27 @@ public class TrafficViewModel extends ViewModel {
             if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new IOException("Feed request failed");
             }
+
             List<TrafficSituation> records;
-            try (InputStream input = connection.getInputStream()) {
-                XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-                factory.setNamespaceAware(true);
-                org.xmlpull.v1.XmlPullParser parser = factory.newPullParser();
-                parser.setInput(input, null);
-                records = new TrafficXmlParser().parse(parser, feed.category);
+
+            String xml;
+
+            try (InputStream input = connection.getInputStream();
+                 java.io.ByteArrayOutputStream output =
+                         new java.io.ByteArrayOutputStream()) {
+
+                byte[] buffer = new byte[8192];
+                int count;
+
+                while ((count = input.read(buffer)) != -1) {
+                    output.write(buffer, 0, count);
+                }
+
+                xml = output.toString("UTF-8");
             }
+
+            records = new TrafficXmlParser().parse(xml, feed.category);
+
             main.post(() -> finish(feed, records));
         } catch (IOException | org.xmlpull.v1.XmlPullParserException e) {
             main.post(() -> finish(feed, null));

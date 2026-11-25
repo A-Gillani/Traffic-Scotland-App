@@ -230,16 +230,6 @@ public class TrafficMapFragment extends Fragment
 
         googleMap.clear();
 
-        android.util.Log.d("TrafficMap",
-                "MAP CLEAR | Fragment=" + System.identityHashCode(this)
-                        + " | Map=" + System.identityHashCode(googleMap)
-                        + " | Category=" + selectedCategory
-                        + " | Radius=" + radiusKm[selectedDistance]);
-
-        android.util.Log.d("TrafficMap",
-                "Category=" + selectedCategory
-                        + " Radius=" + radiusKm[selectedDistance]);
-
 
         String scope = selectedCategory == 1 ? TrafficViewModel.INCIDENT :
                 selectedCategory == 2 ? TrafficViewModel.ROADWORKS : "";

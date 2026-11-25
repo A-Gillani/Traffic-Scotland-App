@@ -208,6 +208,10 @@ public class TrafficMapFragment extends Fragment
         if (getView() == null) return;
         googleMap = map;
 
+        android.util.Log.d("TrafficMap",
+                "MAP READY | Fragment=" + System.identityHashCode(this)
+                        + " | Map=" + System.identityHashCode(map));
+
         googleMap.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
                         new LatLng(56.4907, -4.2026),
@@ -225,9 +229,17 @@ public class TrafficMapFragment extends Fragment
         }
 
         googleMap.clear();
+
+        android.util.Log.d("TrafficMap",
+                "MAP CLEAR | Fragment=" + System.identityHashCode(this)
+                        + " | Map=" + System.identityHashCode(googleMap)
+                        + " | Category=" + selectedCategory
+                        + " | Radius=" + radiusKm[selectedDistance]);
+
         android.util.Log.d("TrafficMap",
                 "Category=" + selectedCategory
                         + " Radius=" + radiusKm[selectedDistance]);
+
 
         String scope = selectedCategory == 1 ? TrafficViewModel.INCIDENT :
                 selectedCategory == 2 ? TrafficViewModel.ROADWORKS : "";
@@ -298,6 +310,10 @@ public class TrafficMapFragment extends Fragment
             android.util.Log.d("TrafficMap",
                     "Category=" + selectedCategory
                             + " Radius=" + radiusKm[selectedDistance]);
+            android.util.Log.d("TrafficMap",
+                    "ADDING MARKER | Filter=" + selectedCategory
+                            + " | Category=" + situation.category
+                            + " | Road=" + situation.roadLabel());
 
             googleMap.addMarker(
                     new MarkerOptions()
